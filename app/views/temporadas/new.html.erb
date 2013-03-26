@@ -1,0 +1,11 @@
+<%= form_for([@seriado, @temporada]) do |f| %> 
+  <%= f.label :numero, "Numero" %>
+  <%= f.text_field :numero %>
+  <br/>
+  <%= f.label :sinopse, "Sinopse" %>
+  <%= f.text_area :sinopse, :rows => 5, :cols => 50 %>
+
+  <br/>
+  <%= f.hidden_field :seriado_id, :value => @seriado.id %>
+  <%= f.submit 'Salvar' %>
+<% end %>

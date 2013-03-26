@@ -1,0 +1,11 @@
+<b>Temporadas</b>
+
+<table>
+	<% @temporadas.each do |t| %>
+	<tr>
+		<td><%= t.numero %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to '+', new_seriado_temporada_path(@seriado.id) %>

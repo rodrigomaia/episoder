@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  inicio: 2013-03-25
+  status: 
+
+two:
+  nome: MyString
+  inicio: 2013-03-25
+  status: 

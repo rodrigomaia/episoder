@@ -1,0 +1,17 @@
+<%= form_for(@seriado, :html => { :multipart => true }) do |f| %> 
+  <%= f.label :nome, "Nome" %>
+  <%= f.text_field :nome %>  
+  <%= f.file_field :foto %>
+  <br/>
+  <%= f.label :inicio, "Início" %>
+  <%= date_select :seriado, :inicio, :start_year => 2000, :end_year => Time.now.year %>
+  <br/>
+  <%= f.label :status, "Status" %>
+  <%= f.select(:status, [["Andamento", "A"], ["Cancelado", "C"]], {:prompt => 'Selecione um Status'}) %>
+  <br/>
+  <%= f.label :sinopse, "Sinopse" %>
+  <%= f.text_area :sinopse, :rows => 5, :cols => 50 %>
+
+  <br/>
+  <%= f.submit text_button %>
+<% end %>

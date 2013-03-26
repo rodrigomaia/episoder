@@ -1,0 +1,21 @@
+<b>Seriados</b>
+
+<%= form_tag("buscar", :method => "get") do %>
+  <%= label_tag(:termo, "Buscar por:") %>
+  <%= text_field_tag(:termo) %>
+  <%= submit_tag("Buscar") %>
+<% end %>
+
+<table>
+	<% @seriados.each do |s| %>
+	<tr>
+		<td><%= link_to s.nome, edit_seriado_path(s) %></td>
+		<td><%= image_tag s.foto.url(:thumb) %></td>
+		<td><%= link_to 'T', seriado_temporadas_path(s.id) %>
+		<td><%= link_to '✄', s, :action => :destroy, :confirm => 'Tem certeza?', :method => :delete %>
+	</tr>
+	<% end %>
+</table>
+<%= will_paginate @seriados, :previous_label => "<", :next_label => ">" %>
+
+<%= link_to '+', new_seriado_path %>
